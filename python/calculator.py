@@ -1,4 +1,4 @@
-
+import pytest
 import re
 
 
@@ -6,21 +6,21 @@ def sum(a,b):
 
     return float(a)+float(b)
 
-def check_for_number(givennumber):
+def check4no(givennumber):
     num_format = re.compile("(\d+(?:\.\d+)?)")
     isnumber = re.match(num_format,givennumber)
     
     if isnumber:
         return givennumber
     else:
-        raise "Error: Entered input is not a valid digit"
+        raise ValueError("Entered input is not a valid digit")
 
 def ask_user():
     x = input("Enter first number:")
-    check_for_number(x)
+    check4no(x)
 
     y = input ("Enter second number:")
-    check_for_number(y)
+    check4no(y)
     return x,y
 
 
@@ -39,5 +39,23 @@ print('Operation to be performed:', options.o)
 if options.o == 'add':
     a,b = ask_user()
     print("RESULT: ",sum(a,b))
+    
+def test_sum_int():
+	assert sum(3,2) == 5
+	
+def test_sum_float():
+	assert sum(2.5,3.5) == 6
+	
+def test_check4no():
+
+	with pytest.raises(ValueError,match="Entered input is not a valid digit"):
+		check4no('a')
+
+	
+
+
+
+
+    
 
     
