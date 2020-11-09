@@ -9,7 +9,7 @@ if(x.isdigit() and y.isdigit()):
     sum = sum(x,y)
     print("sum=",sum)
 else:
-    print("Inputs are not integers")
+    print("Inputs are not positive integers")
 
 
 
