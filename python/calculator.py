@@ -6,6 +6,12 @@ def sum(a,b):
 
     return float(a)+float(b)
 
+def diff(a,b):
+    if a>b:
+        return float(a)-float(b)
+    else:
+        return float(b)-float(a)
+
 def check4no(givennumber):
     num_format = re.compile("(\d+(?:\.\d+)?)")
     isnumber = re.match(num_format,givennumber)
@@ -39,6 +45,9 @@ print('Operation to be performed:', options.o)
 if options.o == 'add':
     a,b = ask_user()
     print("RESULT: ",sum(a,b))
+elif options.o == 'sub':
+    a,b = ask_user()
+    print("RESULT: ",diff(a,b))
     
 def test_sum_int():
 	assert sum(3,2) == 5
