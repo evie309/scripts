@@ -12,6 +12,11 @@ def diff(a,b):
     else:
         return float(b)-float(a)
 
+def mult(a,b):
+
+    return float(a)*float(b)
+
+
 def check4no(givennumber):
     num_format = re.compile("(\d+(?:\.\d+)?)")
     isnumber = re.match(num_format,givennumber)
@@ -48,6 +53,9 @@ if options.o == 'add':
 elif options.o == 'sub':
     a,b = ask_user()
     print("RESULT: ",diff(a,b))
+elif options.o == 'mul':
+    a,b = ask_user()
+    print("RESULT: ", mult(a,b))
     
 def test_sum_int():
 	assert sum(3,2) == 5
