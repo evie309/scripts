@@ -6,7 +6,7 @@ def sum(a,b):
 
     return float(a)+float(b)
 
-def sub(a,b):
+def diff(a,b):
     if a>b:
         return float(a)-float(b)
     else:
@@ -47,7 +47,7 @@ if options.o == 'add':
     print("RESULT: ",sum(a,b))
 elif options.o == 'sub':
     a,b = ask_user()
-    print("RESULT: ",sub(a,b))
+    print("RESULT: ",diff(a,b))
     
 def test_sum_int():
 	assert sum(3,2) == 5
