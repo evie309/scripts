@@ -63,9 +63,6 @@ def test_sum_int():
 def test_sum_float():
 	assert sum(2.5,3.5) == 6
 	
-def test_sub_int():
-	assert diff(6,3) == 3
-	
 def test_check4no():
 
 	with pytest.raises(ValueError,match="Entered input is not a valid digit"):
